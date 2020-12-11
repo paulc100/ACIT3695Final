@@ -3,6 +3,7 @@
 * Open command prompt and run:
 
 npm install
+
 node index
 
 # 2. Mutations 

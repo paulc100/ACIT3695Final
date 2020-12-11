@@ -14,7 +14,6 @@ export const typeDefs = gql`
     createPost(user: String!, topic: String!, body: String!, comments: [String]): Posts!
     comment(user: String!, message: String!, postid: ID!): Comments!
     respond(commentid: ID!, message: String!): Comments!
-    subscribeToId(postid: ID!): Posts
   }
 
   type Users {
@@ -39,11 +38,3 @@ export const typeDefs = gql`
     subscribe: Posts!
   }
 `;
-
-// type Mutation {
-//   updateNote(id: String!, title: String!, description: String!) {
-//     id
-//     title
-//     description
-//   }
-// }

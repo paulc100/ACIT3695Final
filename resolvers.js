@@ -13,19 +13,17 @@ export const resolvers = {
     getAllComments () {
       return Comments
     },
-
     getPostById(parent, args, context, info) { 
       return Posts.find(post => post.id === args.id);
     },
     getPostByTopic(parent, args, context, info) { 
       return Posts.filter(post => post.topic === args.topic);
     },
-
   },
 
   Mutation: {
     createPost: async (_, { user, topic, body}, { pubsub }) => {
-      const id = Math.random().toString(36).substring(2, 8);
+      const id = Math.random().toString(36).substring(2, 6);
       const post = {
         user: user,
         topic: topic,
@@ -38,7 +36,7 @@ export const resolvers = {
     },
 
     comment: async (_, { user, message, postid }, { pubsub }) => {
-      const id = Math.random().toString(36).substring(2, 8);
+      const id = Math.random().toString(36).substring(2, 6);
       const comment = {
         user: user,
         id: id,

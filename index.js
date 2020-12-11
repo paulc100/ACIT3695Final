@@ -7,8 +7,6 @@ const { PubSub } = pkg;
 
 const pubsub = new PubSub()
 
-const { ApolloServer } = aserver;
-
 const startServer = async () => {
   const { ApolloServer } = aserver;
   const server = new ApolloServer({typeDefs, resolvers, context:({ req, res}) => ({ req, res, pubsub}) })
